@@ -6,7 +6,7 @@ Config.LetPlayersChangeVisibilityOfRadioList = true     -- Let players to toggle
 Config.RadioListVisibilityCommand = "radiolist"         -- Only works if Config.LetPlayersChangeVisibilityOfRadioList is set to true
 Config.HideRadioListVisibilityByDefault = false         -- If set to true and a player joins the server, don't show the radio list until the player execute the Config.RadioListVisibilityCommand command
 
-Config.LetPlayersSetTheirOwnNameInRadio = true          -- Let players to customize how their name is displayed on the list
+Config.LetPlayersSetTheirOwnNameInRadio = false          -- Let players to customize how their name is displayed on the list
 Config.RadioListChangeNameCommand = "nameinradio"       -- Only works if Config.LetPlayersSetTheirOwnNameInRadio is set to true
 Config.ResetPlayersCustomizedNameOnExit = true          -- Resets customized name players set for themselves on their server exit
 
@@ -23,8 +23,6 @@ Config.GroupsWithAccessToTheRadioList = {               -- For ESX it checks if 
 }
 
 Config.JobsWithCallsign = {                             -- It only detects callsign if the framework is "QB"
-    ["police"] = true,
-    ["ambulance"] = true,
 }
 
 Config.LetPlayersOverrideRadioChannelsWithName = false  -- Let players change the name of radio channels that are in Config.RadioChannelsWithName => Only works if Config.LetPlayersChangeRadioChannelsName is set to true

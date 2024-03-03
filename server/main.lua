@@ -65,7 +65,7 @@ local function setPlayerName(source, newName)
     customPlayerNames[getPlayerIdentifier(source)] = newName
     Player(source).state:set(Shared.State.nameInRadio, newName, true)
     refreshRadioForPlayer(source)
-    Config.Notification(source, ("Your name on radio changed to %s"):format(newName))
+    -- Config.Notification(source, ("Your name on radio changed to %s"):format(newName))
 end
 
 local function getPlayerName(source)
@@ -201,7 +201,7 @@ elseif Framework.Initial == "qb" then
         local isAllowedToChangeName = isPlayerAllowedToChangeName(source, false)
         local hasCallsignSetAsName = Player(source).state[Shared.State.callsignIsSet]
         if not isAllowedToChangeName then
-            setPlayerName(source, playerData.metadata?.callsign or Player(source).state[Shared.State.nameInRadio])
+            setPlayerName(source, Player(source).state[Shared.State.nameInRadio])
             Player(source).state:set(Shared.State.callsignIsSet, true)
         elseif isAllowedToChangeName and hasCallsignSetAsName then
             resetPlayerName(source)
